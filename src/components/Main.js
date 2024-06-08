@@ -60,33 +60,37 @@ function Main() {
 
   if (!data) {
     return (
-      <div style={{ textAlign: "center", fontSize: "40px" }}>...Loading</div>
+      <div className="loading">...Loading</div>
     );
   }
 
   return (
     <>
       <div
-        style={{
-          marginTop: "20px",
-          marginBottom: "20px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+     
+        // style={{
+        //   marginTop: "20px",
+        //   marginBottom: "20px",
+        //   display: "flex",
+        //   justifyContent: "center",
+        //   alignItems: "center",
+        // }}
+        className="container"
       >
+         <div className="select-container">
         <select
+        className="country-select"
           onChange={handleCountryChange}
           value={selectedCountry}
-          style={{
-            padding: "10px",
-            fontSize: "16px",
-            border: "1px solid #ccc",
-            borderRadius: "5px",
-            width: "200px",
-            backgroundColor: "#f8f8f8",
-            cursor: "pointer",
-          }}
+          // style={{
+          //   padding: "10px",
+          //   fontSize: "16px",
+          //   border: "1px solid #ccc",
+          //   borderRadius: "5px",
+          //   width: "200px",
+          //   backgroundColor: "#f8f8f8",
+          //   cursor: "pointer",
+          // }}
         >
           <option value="">Select a country</option>
           {countries.map((country, index) => (
@@ -95,25 +99,33 @@ function Main() {
             </option>
           ))}
         </select>
-      </div>
-      <div className="all">
+        </div>
+
+      <Grid container>
+
+        <Grid xs={6}>
+        <div className="all">
         <div>
-          <h1 className="h1">Place: {data.meta.timezone}</h1>
+          <h1 className="place">Place: {data.meta.timezone}</h1>
+        </div>
+ 
+      </div>
+        </Grid>
+        <Grid xs={6}>
+        <div>
+          <h2 className="hijri-date">
+            {data.date.hijri.day}  {data.date.hijri.month.ar}
+           <span>  {data.date.hijri.year} </span>
+          </h2>
+         
         </div>
         <div>
-          <h2 className="">
-            {data.date.hijri.day} {data.date.hijri.month.ar}{" "}
-            {data.date.hijri.year}
-          </h2>
-          <h2>
+        <h2 className="gregorian-date">
             {data.date.gregorian.weekday.en}. {data.date.gregorian.day}{" "}
             {data.date.gregorian.month.en}
           </h2>
         </div>
-      </div>
-      <Grid container>
-        <Grid xs={6}></Grid>
-        <Grid xs={6}></Grid>
+        </Grid>
       </Grid>
       <Divider style={{ borderColor: "black", opacity: "0.1" }} />
 
@@ -125,6 +137,7 @@ function Main() {
         <Prayer name={"Maghrib"} time={data.timings.Maghrib} />
         <Prayer name={"Isha"} time={data.timings.Isha} />
       </Box>
+      </div>
     </>
   );
 }
