@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  direction: rtl !important;
+}
+.aaa {
+  margin-left: 40px !important;
+  padding: 20px !important;
+}
+.MuiBox-root {
+  flex-wrap: wrap !important;
+}
+.css-46bh2p-MuiCardContent-root {
+  text-align: center !important;
+}
+.css-sptymy-MuiGrid2-root {
+  width: 96% !important;
+}
+.css-1pi8xg4-MuiGrid2-root {
+  text-align: center !important;
+}
+.css-0 {
+  justify-content: center !important;
+}
+h1,
+h2 {
+  font-size: 22px !important;
+  margin-bottom: 11px;
+}
+.css-1qw96cp:last-child {
+  text-align: center;
+}
+.css-5x48r2 {
+  text-align: center;
+  width: 100%;
+}
+.all {
+  text-align: center;
+}
